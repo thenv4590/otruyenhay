@@ -1,0 +1,16 @@
+{
+    "title": "Truyện Kiếm Hiệp",
+    "cover": "https://picsum.photos/600/300",
+    "chapters": [
+        {
+            "chapter": 1,
+            "title": "Thiếu niên xuống núi",
+            "content": "Một thiếu niên mang kiếm..."
+        },
+        {
+            "chapter": 2,
+            "title": "Gặp cao thủ",
+            "content": "Hắn gặp một lão nhân bí ẩn..."
+        }
+    ]
+}

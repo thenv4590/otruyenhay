@@ -1,0 +1,210 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f5f5f5;
+    color:#333;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    background:white;
+    border-bottom:1px solid #ddd;
+}
+
+header a{
+    text-decoration:none;
+    color:#4CAF50;
+    font-weight:bold;
+}
+
+header button{
+    border:none;
+    background:none;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+}
+
+/* tiêu đề */
+
+#title{
+    text-align:center;
+    color:#5a8f00;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+#chapterTitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:20px;
+}
+
+/* nội dung */
+
+.content{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:30px;
+    white-space:pre-line;
+}
+
+/* navigation */
+
+.nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.nav button{
+    background:#4CAF50;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.nav button:hover{
+    background:#3f9443;
+}
+
+.nav button:disabled{
+    background:#b8d9b8;
+    cursor:not-allowed;
+}
+
+/* dark mode */
+
+.dark{
+    background:#1e1e1e;
+    color:#ddd;
+}
+
+.dark header{
+    background:#2b2b2b;
+    border-bottom:1px solid #444;
+}
+
+.dark .content{
+    color:#ddd;
+}
+/* danh sách truyện */
+
+#storyList{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    padding:20px;
+}
+
+/* card truyện */
+
+.story{
+    position:relative;
+    cursor:pointer;
+    overflow:hidden;
+    border-radius:4px;
+}
+
+/* ảnh */
+
+.story img{
+    width:100%;
+    height:340px;   /* tăng chiều cao ảnh */
+    object-fit:cover;
+    display:block;
+}
+
+/* title */
+
+.story-title{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+
+    padding:12px 14px;
+
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+
+    background:rgba(0,0,0,0.55); /* nền đen mờ */
+}
+
+/* hover nhẹ cho đẹp */
+
+.story:hover img{
+    transform:scale(1.03);
+    transition:0.3s;
+}
+
+/* ===== ADMIN PAGE ===== */
+
+.admin-container{
+    max-width:800px;
+    margin:auto;
+    padding:25px;
+}
+
+/* mỗi dòng */
+
+.admin-row{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:15px;
+}
+
+/* label */
+
+.admin-row label{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+/* input */
+
+.admin-row input{
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+
+/* textarea */
+
+.admin-row textarea{
+    height:200px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    resize:vertical;
+}
+
+/* nút */
+
+.admin-container button{
+    margin-right:10px;
+    margin-top:10px;
+    padding:8px 14px;
+    border:none;
+    background:#4CAF50;
+    color:white;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.admin-container button:hover{
+    background:#3f9443;
+}

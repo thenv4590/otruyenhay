@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <h2>⚙ Quản trị truyện</h2>
+    </header>
+
+    <div class="admin-container ">
+
+        <label>Tải file truyện (JSON)</label>
+        <input type="file" id="loadStory" accept="application/json" />
+
+        <div class="admin-row">
+            <label>Tên truyện</label>
+            <input id="storyTitle" />
+
+            <label>Ảnh bìa (URL)</label>
+            <input id="coverUrl" />
+        </div>
+
+        <div class="admin-row">
+            <label>Số chương</label>
+            <input id="chapterNumber" type="number" />
+
+            <label>Tên chương</label>
+            <input id="chapterTitle" />
+
+            <label>Nội dung</label>
+            <textarea id="chapterContent"></textarea>
+        </div>
+
+        <button onclick="addChapter()">Thêm chương</button>
+        <button onclick="exportJSON()">Xuất JSON mới</button>
+
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

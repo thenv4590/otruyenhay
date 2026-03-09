@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ổ Truyện Hay</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">⬅ Danh sách truyện</a>
+        <button onclick="toggleDark()">🌙</button>
+    </header>
+
+    <div class="container">
+
+        <h2 id="title"></h2>
+        <h3 id="chapterTitle"></h3>
+
+        <div class="nav" style="margin-bottom: 20px;">
+            <button id="prevBtn1" onclick="prevChapter()">❮ Trước</button>
+            <button id="nextBtn1" onclick="nextChapter()">Sau ❯</button>
+        </div>
+
+        <div id="content" class="content"></div>
+
+        <div class="nav">
+            <button id="prevBtn2" onclick="prevChapter()">❮ Trước</button>
+            <button id="nextBtn2" onclick="nextChapter()">Sau ❯</button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

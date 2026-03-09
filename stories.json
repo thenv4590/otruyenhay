@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Truyện Demo",
+    "cover": "https://picsum.photos/200/300",
+    "file": "stories/demo.json"
+  },
+  {
+    "title": "Truyện Kiếm Hiệp",
+    "cover": "https://picsum.photos/201/300",
+    "file": "stories/kiemhiep.json"
+  }
+]
