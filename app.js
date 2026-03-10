@@ -3,7 +3,7 @@ const params = new URLSearchParams(location.search);
 const storyFile = params.get("file");
 
 let storyData;
-let chapterIndex = 0;
+let chapterIndex = parseInt(params.get("chapter")) || 0;
 let stories = [];
 let currentPage = 1;
 const perPage = 5;
