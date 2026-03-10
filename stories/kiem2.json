@@ -1,0 +1,17 @@
+{
+  "title": "Thiên Đạo Đồ Thư Quán",
+  "cover": "https://picsum.photos/200/300",
+  "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
+  "chapters": [
+    {
+            "chapter": 1,
+      "title": "Chương 1: Thư Viện",
+      "content": "Trương Huyền mở mắt ra và phát hiện mình xuyên không..."
+    },
+    {
+            "chapter": 1,
+      "title": "Chương 2: Hệ Thống",
+      "content": "Một âm thanh vang lên trong đầu: Thiên Đạo Đồ Thư Quán đã kích hoạt..."
+    }
+  ]
+}
