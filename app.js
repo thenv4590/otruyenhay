@@ -12,7 +12,7 @@ const perPage = 5;
 
 function loadStories() {
 
-    fetch(DATA_BASE + "stories.json")
+    fetch(DATA_BASE + "stories.json?t=" + Date.now())
         .then(res => res.json())
         .then(data => {
             stories = data;
@@ -111,7 +111,7 @@ async function loadReader() {
         return;
     }
 
-    storyData = await fetch(DATA_BASE + storyFile).then(r => r.json());
+    storyData = await fetch(DATA_BASE + storyFile + '?t=' + Date.now()).then(r => r.json());
 
     document.getElementById("title").innerText = storyData.title;
 

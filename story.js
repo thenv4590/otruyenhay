@@ -4,7 +4,7 @@ const file = params.get("file");
 
 let chapters = [];
 
-fetch(DATA_BASE + file)
+fetch(DATA_BASE + file + '?t=' + Date.now())
     .then(res => res.json())
     .then(data => {
 
