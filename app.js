@@ -1,3 +1,4 @@
+const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/refs/heads/main/";
 const params = new URLSearchParams(location.search);
 const storyFile = params.get("file");
 
@@ -11,7 +12,7 @@ const perPage = 5;
 
 function loadStories() {
 
-    fetch("stories.json")
+    fetch(DATA_BASE + "stories.json")
         .then(res => res.json())
         .then(data => {
             stories = data;
@@ -44,7 +45,7 @@ function renderStories() {
         `;
 
         div.onclick = () => {
-            location.href = "story.html?file=" + story.file;
+            location.href = "story.html?file=stories/" + story.file;
         };
 
         list.appendChild(div);
@@ -110,7 +111,7 @@ async function loadReader() {
         return;
     }
 
-    storyData = await fetch(storyFile).then(r => r.json());
+    storyData = await fetch(DATA_BASE + storyFile).then(r => r.json());
 
     document.getElementById("title").innerText = storyData.title;
 

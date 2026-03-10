@@ -1,116 +1,56 @@
 {
   "title": "Kiếm Động Cửu Thiên",
-  "cover": "https://picsum.photos/200/300",
+  "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/refs/heads/main/images/covers/kiem-dong-cuu-thien.jpg",
   "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
   "chapters": [
     {
             "chapter": 1,
-      "title": "Chương 1: Thiếu Niên",
+      "title": "Thiếu Niên",
       "content": "Gió lạnh thổi qua thôn nhỏ. Lâm Phong đứng trước cửa nhà nhìn về phía dãy núi xa..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 2: Linh Căn",
+            "chapter": 2,
+      "title": "Linh Căn",
       "content": "Trưởng lão tông môn đặt tay lên bia đá. Ánh sáng bỗng bùng lên..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
+            "chapter": 3,
+      "title": "Nhập Môn",
       "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
+            "chapter": 4,
+      "title": "Nhập Môn",
       "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
+            "chapter": 5,
+      "title": "Nhập Môn",
       "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
+            "chapter": 6,
+      "title": "Nhập Môn",
       "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
+            "chapter": 7,
+      "title": "Nhập Môn",
       "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
+            "chapter": 8,
+      "title": "Nhập Môn",
       "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
+            "chapter": 9,
+      "title": "Nhập Môn",
       "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
-      "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
-    },
-    {
-            "chapter": 1,
-      "title": "Chương 3: Nhập Môn",
+            "chapter": 10,
+      "title": "Nhập Môn",
       "content": "Sau ba ngày khảo hạch, Lâm Phong chính thức bước vào con đường tu luyện..."
     }
   ]

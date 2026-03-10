@@ -1,9 +1,10 @@
+const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/refs/heads/main/";
 const params = new URLSearchParams(location.search);
 const file = params.get("file");
 
 let chapters = [];
 
-fetch(file)
+fetch(DATA_BASE + file)
     .then(res => res.json())
     .then(data => {
 

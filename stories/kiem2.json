@@ -1,16 +1,16 @@
 {
   "title": "Thiên Đạo Đồ Thư Quán",
-  "cover": "https://picsum.photos/200/300",
+  "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/refs/heads/main/images/covers/pham-nhan-tu-tien.jpg",
   "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
   "chapters": [
     {
             "chapter": 1,
-      "title": "Chương 1: Thư Viện",
+      "title": "CThư Viện",
       "content": "Trương Huyền mở mắt ra và phát hiện mình xuyên không..."
     },
     {
-            "chapter": 1,
-      "title": "Chương 2: Hệ Thống",
+            "chapter": 2,
+      "title": "Hệ Thống",
       "content": "Một âm thanh vang lên trong đầu: Thiên Đạo Đồ Thư Quán đã kích hoạt..."
     }
   ]
