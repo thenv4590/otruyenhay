@@ -149,6 +149,10 @@ function showContent(ch) {
     const nextBtn1 = document.getElementById("nextBtn1");
     const prevBtn2 = document.getElementById("prevBtn2");
     const nextBtn2 = document.getElementById("nextBtn2");
+    prevBtn1.style.display = "";
+    nextBtn1.style.display = "";
+    prevBtn2.style.display = "";
+    nextBtn2.style.display = "";
 
     prevBtn1.disabled = chapterIndex === 0;
     nextBtn1.disabled = chapterIndex === storyData.chapters.length - 1;
@@ -163,19 +167,25 @@ function showShopeeGate(ch) {
 
     const content = document.getElementById("content");
 
+    // Ẩn nút điều hướng
+    document.getElementById("prevBtn1").style.display = "none";
+    document.getElementById("nextBtn1").style.display = "none";
+    document.getElementById("prevBtn2").style.display = "none";
+    document.getElementById("nextBtn2").style.display = "none";
+
     content.innerHTML = `
         <div style="text-align:center">
 
             <img id="shopeeAd"
                  src="${IMG_BASE}/shopee.png"
-                 style="max-width:300px;cursor:pointer">
+                 style="max-width:80%;cursor:pointer;margin-top:-100px;">
 
         </div>
     `;
 
     document.getElementById("shopeeAd").onclick = () => {
 
-        window.open("https://shopee.vn", "_blank");
+        window.open("https://s.shopee.vn/15Y0Ok24d", "_blank");
 
         showContent(ch);
 
