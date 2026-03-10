@@ -1,19 +1,19 @@
 [
   {
     "title": "Kiếm Động Cửu Thiên",
-    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/refs/heads/main/images/covers/kiem-dong-cuu-thien.jpg",
+    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/images/covers/kiem-dong-cuu-thien.jpg",
     "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
     "file": "kiem1.json"
   },
   {
     "title": "Thiên Đạo Đồ Thư Quán",
-    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/refs/heads/main/images/covers/pham-nhan-tu-tien.jpg",
+    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/images/covers/pham-nhan-tu-tien.jpg",
     "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
     "file": "kiem2.json"
   },
   {
     "title": "Phàm Nhân Tu Tiên",
-    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/refs/heads/main/images/covers/thien-dao-do-thu-quan.jpg",
+    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/images/covers/thien-dao-do-thu-quan.jpg",
     "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
     "file": "kiem3.json"
   }

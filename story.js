@@ -1,4 +1,4 @@
-const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/refs/heads/main/";
+const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
 const params = new URLSearchParams(location.search);
 const file = params.get("file");
 
