@@ -1,4 +1,5 @@
 const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
+const IMG_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/images/";
 const params = new URLSearchParams(location.search);
 const storyFile = params.get("file");
 
@@ -129,6 +130,18 @@ function renderChapter() {
     document.getElementById("chapterTitle").innerText =
         "Chương " + ch.chapter + ": " + ch.title;
 
+    const chapterNumber = chapterIndex + 1;
+    if (chapterNumber === 2 || chapterNumber === 4) {
+        showShopeeGate(ch);
+    } else {
+        showContent(ch);
+    }
+    
+
+}
+
+function showContent(ch) {
+
     document.getElementById("content").innerHTML =
         ch.content.replace(/\n/g, "<br>");
 
@@ -146,6 +159,29 @@ function renderChapter() {
 
 }
 
+function showShopeeGate(ch) {
+
+    const content = document.getElementById("content");
+
+    content.innerHTML = `
+        <div style="text-align:center">
+
+            <img id="shopeeAd"
+                 src="${IMG_BASE}/shopee.png"
+                 style="max-width:300px;cursor:pointer">
+
+        </div>
+    `;
+
+    document.getElementById("shopeeAd").onclick = () => {
+
+        window.open("https://shopee.vn", "_blank");
+
+        showContent(ch);
+
+    };
+
+}
 
 /* CHƯƠNG SAU */
 
