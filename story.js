@@ -1,4 +1,5 @@
-const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
+const DATA_BASE = "";
+const DATA_IMG = DATA_BASE + "images/covers/";
 const params = new URLSearchParams(location.search);
 const file = params.get("file");
 
@@ -9,8 +10,8 @@ fetch(DATA_BASE + file + '?t=' + Date.now())
     .then(data => {
 
         document.getElementById("storyTitle").innerText = data.title;
-        document.getElementById("storyDesc").innerText = data.description;
-        document.getElementById("storyCover").src = data.cover;
+        document.getElementById("storyDesc").innerHTML = "<p>" + data.description.replace(/\n/g, "</p><p>") + "</p>";
+        document.getElementById("storyCover").src = DATA_IMG + data.cover;
 
         chapters = data.chapters;
 
@@ -27,7 +28,7 @@ function renderChapters() {
         const div = document.createElement("div");
 
         div.className = "chapter";
-        div.innerHTML = "✱ " + c.title;
+        div.innerHTML = "✱ Chương " + c.chapter;
 
         div.onclick = () => {
             location.href =

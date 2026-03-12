@@ -1,20 +1,29 @@
-[
-  {
-    "title": "Kiếm Động Cửu Thiên",
-    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/images/covers/kiem-dong-cuu-thien.jpg",
-    "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
-    "file": "kiem1.json"
-  },
-  {
-    "title": "Thiên Đạo Đồ Thư Quán",
-    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/images/covers/pham-nhan-tu-tien.jpg",
-    "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
-    "file": "kiem2.json"
-  },
-  {
-    "title": "Phàm Nhân Tu Tiên",
-    "cover": "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/images/covers/thien-dao-do-thu-quan.jpg",
-    "description": "Thiếu niên nghèo bước vào con đường tu luyện đầy nguy hiểm.",
-    "file": "kiem3.json"
-  }
-]
+{
+  "link_shopee": "https://s.shopee.vn/3VdBAVDNTN",
+  "stories": [
+    {
+      "title": "NGƯỜI TÔI TỪNG NUÔI GIỜ LÀ SẾP TÔI",
+      "cover": "thien-dao-do-thu-quan.jpg",
+      "description": "Vì muốn chuộc lại lỗi lầm trong quá khứ, tôi nhận nuôi một cậu bé mồ côi không cha không mẹ.\nTôi lo cho cậu học đại học, rồi tiếp tục học lên cao học.\nLúc tình cảm còn trong sáng nhất, tôi ngủ ở kho hàng chỉ để tiết kiệm tiền mua cho cậu ấy một chiếc laptop không bị giật lag.\nCho đến một ngày, tôi đến trường tìm cậu ấy, lại tận mắt thấy một cô nàng xinh đẹp, giàu có tỏ tình với nó trước mặt bao người.\n“Hàn Dương, cô ta vừa nghèo lại vừa không có học thức, không xứng với anh đâu, mình đến với nhau đi.”\nTối hôm đó, tôi nhắn tin cho Hàn Dương: “Chia tay đi Hàn Dương, anh già rồi, chị đây muốn tìm trai trẻ hơn.”\n",
+      "file": "septoi.json"
+    },
+    {
+      "title": "BẠN TRAI CŨ TRỞ THÀNH SẾP CỦA TÔI",
+      "cover": "thien-dao-do-thu-quan.jpg",
+      "description": "Em trai tôi cuối cùng cũng thoát kiếp độc thân, nhưng anh trai của bạn gái nó không đồng ý.\nEm tôi nhìn tôi bằng ánh mắt long lanh, tha thiết.\n“Chị ơi, cưa đổ anh trai cô ấy đi, chúng ta thành đại gia đình luôn!”\nCũng không phải là không thể, nhưng khi gặp đối phương, tôi sững sờ.\nNgười yêu cũ cười đểu: “Lại chơi mỹ nhân kế nữa à?”\n",
+      "file": "bantrai.json"
+    },
+    {
+      "title": "Trở về năm 20 tuổi",
+      "cover": "thien-dao-do-thu-quan.jpg",
+      "description": "",
+      "file": "20tuoi.json"
+    },
+    {
+      "title": "Gửi nhầm ảnh gợi cảm cho sếp",
+      "cover": "thien-dao-do-thu-quan.jpg",
+      "description": "",
+      "file": "guinhamanh.json"
+    }
+  ]
+}

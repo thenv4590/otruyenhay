@@ -1,5 +1,6 @@
-const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
-const IMG_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/images/";
+const DATA_BASE = "";
+const DATA_IMG = DATA_BASE + "images/covers/";
+const IMAGES = DATA_BASE + "images/";
 const params = new URLSearchParams(location.search);
 const storyFile = params.get("file");
 
@@ -16,7 +17,7 @@ function loadStories() {
     fetch(DATA_BASE + "stories.json?t=" + Date.now())
         .then(res => res.json())
         .then(data => {
-            stories = data;
+            stories = data.stories;
             renderStories();
         });
 
@@ -36,12 +37,16 @@ function renderStories() {
 
         const div = document.createElement("div");
         div.className = "story";
+        let desc = story.description.replace(/\n/g, "<br>");
+        if (desc.length > 200) {
+            desc = desc.substring(0, 200) + "...";
+        }
 
         div.innerHTML = `
-            <img src="${story.cover}">
+            <img src="${DATA_IMG + story.cover}">
             <div>
                 <div class="story-title">${story.title}</div>
-                <div class="story-desc">${story.description}</div>
+                <div class="story-desc">${desc}</div>
             </div>
         `;
 
@@ -57,24 +62,24 @@ function renderStories() {
 
 }
 
-function renderPagination(){
+function renderPagination() {
 
     const totalPages = Math.ceil(stories.length / perPage);
     const p = document.getElementById("pagination");
 
     p.innerHTML = "";
 
-    function btn(label, page, active=false){
+    function btn(label, page, active = false) {
 
         const b = document.createElement("button");
         b.innerText = label;
 
-        if(active){
-            b.style.background="#4CAF50";
-            b.style.color="white";
+        if (active) {
+            b.style.background = "#4CAF50";
+            b.style.color = "white";
         }
 
-        b.onclick = ()=>{
+        b.onclick = () => {
             currentPage = page;
             renderStories();
         }
@@ -82,24 +87,24 @@ function renderPagination(){
         return b;
     }
 
-    if(currentPage > 1){
-        p.appendChild(btn("«",1));
-        p.appendChild(btn("‹",currentPage-1));
+    if (currentPage > 1) {
+        p.appendChild(btn("«", 1));
+        p.appendChild(btn("‹", currentPage - 1));
     }
 
-    if(currentPage-1 >= 1){
-        p.appendChild(btn(currentPage-1,currentPage-1));
+    if (currentPage - 1 >= 1) {
+        p.appendChild(btn(currentPage - 1, currentPage - 1));
     }
 
-    p.appendChild(btn(currentPage,currentPage,true));
+    p.appendChild(btn(currentPage, currentPage, true));
 
-    if(currentPage+1 <= totalPages){
-        p.appendChild(btn(currentPage+1,currentPage+1));
+    if (currentPage + 1 <= totalPages) {
+        p.appendChild(btn(currentPage + 1, currentPage + 1));
     }
 
-    if(currentPage < totalPages){
-        p.appendChild(btn("›",currentPage+1));
-        p.appendChild(btn("»",totalPages));
+    if (currentPage < totalPages) {
+        p.appendChild(btn("›", currentPage + 1));
+        p.appendChild(btn("»", totalPages));
     }
 
 }
@@ -128,22 +133,17 @@ function renderChapter() {
     const ch = storyData.chapters[chapterIndex];
 
     document.getElementById("chapterTitle").innerText =
-        "Chương " + ch.chapter + ": " + ch.title;
+        "Chương " + ch.chapter;
 
     const chapterNumber = chapterIndex + 1;
-    if (chapterNumber === 2 || chapterNumber === 4) {
-        showShopeeGate(ch);
-    } else {
-        showContent(ch);
-    }
-    
+    showContent(ch);
 
 }
 
 function showContent(ch) {
 
     document.getElementById("content").innerHTML =
-        ch.content.replace(/\n/g, "<br>");
+        "<p>" + ch.content.replace(/\n/g, "</p><p>") + "</p>";
 
     const prevBtn1 = document.getElementById("prevBtn1");
     const nextBtn1 = document.getElementById("nextBtn1");
@@ -163,41 +163,18 @@ function showContent(ch) {
 
 }
 
-function showShopeeGate(ch) {
-
-    const content = document.getElementById("content");
-
-    // Ẩn nút điều hướng
-    document.getElementById("prevBtn1").style.display = "none";
-    document.getElementById("nextBtn1").style.display = "none";
-    document.getElementById("prevBtn2").style.display = "none";
-    document.getElementById("nextBtn2").style.display = "none";
-
-    content.innerHTML = `
-        <div style="text-align:center">
-
-            <img id="shopeeAd"
-                 src="${IMG_BASE}/shopee.png"
-                 style="max-width:80%;cursor:pointer;margin-top:-100px;">
-
-        </div>
-    `;
-
-    document.getElementById("shopeeAd").onclick = () => {
-
-        window.open("https://s.shopee.vn/15Y0Ok24d", "_blank");
-
-        showContent(ch);
-
-    };
-
-}
-
 /* CHƯƠNG SAU */
 
 function nextChapter() {
 
     if (chapterIndex < storyData.chapters.length - 1) {
+        if (chapterIndex === 0) {
+            fetch(DATA_BASE + "stories.json?t=" + Date.now())
+                .then(res => res.json())
+                .then(data => {
+                    window.open(data.link_shopee, "_blank");
+                });
+        }
 
         chapterIndex++;
 

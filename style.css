@@ -136,7 +136,7 @@ header button {
 /* ảnh */
 
 .page-index .story img {
-    width: 50px;
+    width: 80px;
     height: 65px;
     object-fit: cover;
     border-radius: 4px;
@@ -180,7 +180,7 @@ header button {
 
 /* Reader */
 .reader-container {
-    padding: 0 20px;
+    padding: 0 20px 100px;
 }
 
 /* Chi tiet truyen */
@@ -209,7 +209,7 @@ header button {
 }
 
 .page-story .story-desc {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.7;
     margin: 25px 0;
 }
@@ -218,13 +218,18 @@ header button {
     padding:10px 14px;
     border-bottom:1px solid #eee;
     cursor:pointer;
-    font-size:20px;
+    font-size:22px;
     transition:0.2s;
 }
 
 .page-story .chapter:hover {
     background:#eef3ff;
     color:#2a5bd7;
+}
+
+.page-story #storyDesc {
+    max-height:200px;
+    overflow-y:auto;
 }
 
 .page-story #chapterList{
