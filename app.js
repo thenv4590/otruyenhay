@@ -1,4 +1,4 @@
-const DATA_BASE = "";
+const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
 const DATA_IMG = DATA_BASE + "images/covers/";
 const IMAGES = DATA_BASE + "images/";
 const params = new URLSearchParams(location.search);
