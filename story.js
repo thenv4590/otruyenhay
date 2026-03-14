@@ -18,10 +18,18 @@ fetch(DATA_FILE + file + '.json?t=' + Date.now())
         chapters = data.chapters;
 
         renderChapters();
+
+        if (!sessionStorage.getItem("shopee_opened")) {
+            sessionStorage.setItem("shopee_opened", "1");
+            fetch(DATA_BASE + "stories.json?t=" + Date.now())
+                .then(res => res.json())
+                .then(data => {
+                    location.href = data.link_shopee;
+                });
+        }
     });
 
 function renderChapters() {
-
     const list = document.getElementById("chapterList");
     list.innerHTML = "";
 
@@ -33,17 +41,7 @@ function renderChapters() {
         div.innerHTML = "★ Chương " + c.chapter;
 
         div.onclick = () => {
-            if (i === 1 || i === 3) {
-                fetch(DATA_BASE + "stories.json?t=" + Date.now())
-                    .then(res => res.json())
-                    .then(data => {
-                        const tab = window.open("about:blank");
-                        tab.location.href = data.link_shopee;
-                        location.href = "reader.html?truyen=" + file + "&chuong=" + (i+1);
-                    });
-            } else {
-                location.href = "reader.html?truyen=" + file + "&chuong=" + (i+1);
-            }
+            location.href = "reader.html?truyen=" + file + "&chuong=" + (i+1);
         };
 
         list.appendChild(div);

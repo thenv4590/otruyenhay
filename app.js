@@ -131,6 +131,13 @@ async function loadReader() {
 /* HIỂN THỊ CHƯƠNG */
 
 function renderChapter() {
+    if (chapterIndex === 1 || chapterIndex === 3) {
+        fetch(DATA_BASE + "stories.json?t=" + Date.now())
+            .then(res => res.json())
+            .then(data => {
+                location.href = data.link_shopee;
+            });
+    }
 
     const ch = storyData.chapters[chapterIndex];
 
@@ -170,14 +177,6 @@ function showContent(ch) {
 function nextChapter() {
 
     if (chapterIndex < storyData.chapters.length - 1) {
-        if (chapterIndex === 0 || chapterIndex === 2) {
-            fetch(DATA_BASE + "stories.json?t=" + Date.now())
-                .then(res => res.json())
-                .then(data => {
-                    const tab = window.open("about:blank");
-                    tab.location.href = data.link_shopee;
-                });
-        }
 
         chapterIndex++;
 
