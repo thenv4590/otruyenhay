@@ -131,14 +131,6 @@ async function loadReader() {
 /* HIỂN THỊ CHƯƠNG */
 
 function renderChapter() {
-    if (chapterIndex === 1 || chapterIndex === 3) {
-        fetch(DATA_BASE + "stories.json?t=" + Date.now())
-            .then(res => res.json())
-            .then(data => {
-                location.href = data.link_shopee;
-            });
-    }
-
     const ch = storyData.chapters[chapterIndex];
 
     document.getElementById("chapterTitle").innerText =
@@ -147,6 +139,13 @@ function renderChapter() {
     const chapterNumber = chapterIndex + 1;
     showContent(ch);
 
+    if (chapterIndex === 1 || chapterIndex === 3) {
+        fetch(DATA_BASE + "stories.json?t=" + Date.now())
+            .then(res => res.json())
+            .then(data => {
+                location.href = data.link_shopee;
+            });
+    }
 }
 
 function showContent(ch) {
