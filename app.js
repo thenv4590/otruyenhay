@@ -1,5 +1,5 @@
-// const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
-const DATA_BASE = "/";
+const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
+// const DATA_BASE = "/";
 const DATA_FILE = DATA_BASE + "stories/";
 const DATA_IMG = DATA_BASE + "images/covers/";
 const IMAGES = DATA_BASE + "images/";
@@ -121,7 +121,6 @@ async function loadReader() {
 
     storyData = await fetch(DATA_FILE + storyFile + '.json?t=' + Date.now()).then(r => r.json());
 
-    document.title = storyData.title.toUpperCase();;
     document.getElementById("title").innerText = storyData.title;
 
     renderChapter();
