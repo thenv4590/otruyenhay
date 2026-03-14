@@ -3,6 +3,7 @@ body {
     margin: 0;
     background:#f4f6fb;
     color: #333;
+    font-size: 20px !important;
 }
 
 header {
@@ -35,7 +36,7 @@ header button {
 
 /* tiêu đề */
 
-#title {
+#title, #storyTitle {
     text-align: center;
     color: #5a8f00;
     font-size: 28px;
@@ -55,7 +56,6 @@ header button {
 /* nội dung */
 
 .content {
-    font-size: 18px;
     line-height: 1.8;
     margin-bottom: 30px;
     white-space: pre-line;
@@ -184,6 +184,9 @@ header button {
 }
 
 /* Chi tiet truyen */
+.story-container {
+    padding: 0 20px 100px;
+}
 
 .section-title {
     border-bottom: 2px solid #ddd;
@@ -191,50 +194,36 @@ header button {
     margin-top: 30px;
 }
 
-.page-story .story-title {
-    text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-.page-story .cover-box {
+.story-container .cover-box {
     text-align: center;
 }
 
-.page-story .cover-box img {
-    width:240px;
+.story-container .cover-box img {
+    width:80%;
     border-radius:8px;
     box-shadow:0 6px 20px rgba(0,0,0,0.15);
 }
 
-.page-story .story-desc {
-    font-size: 18px;
+.story-container .story-desc {
     line-height: 1.7;
     margin: 25px 0;
 }
 
-.page-story .chapter {
+.story-container .chapter {
     padding:10px 14px;
     border-bottom:1px solid #eee;
     cursor:pointer;
-    font-size:22px;
     transition:0.2s;
+    color: blue;
+    text-decoration: underline;
 }
 
-.page-story .chapter:hover {
+.story-container .chapter:hover {
     background:#eef3ff;
     color:#2a5bd7;
 }
 
-.page-story #storyDesc {
-    max-height:200px;
-    overflow-y:auto;
-}
-
-.page-story #chapterList{
-    max-height:400px;
-    overflow-y:auto;
+.pstory-container #chapterList{
     border:1px solid #e6e6e6;
     border-radius:6px;
     padding:10px;

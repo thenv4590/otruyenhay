@@ -1,11 +1,13 @@
-const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
+// const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/";
+const DATA_BASE = "/";
+const DATA_FILE = DATA_BASE + "stories/";
 const DATA_IMG = DATA_BASE + "images/covers/";
 const IMAGES = DATA_BASE + "images/";
 const params = new URLSearchParams(location.search);
-const storyFile = params.get("file");
+const storyFile = params.get("truyen");
 
 let storyData;
-let chapterIndex = parseInt(params.get("chapter")) || 0;
+let chapterIndex = (parseInt(params.get("chuong")) || 1) - 1;
 let stories = [];
 let currentPage = 1;
 const perPage = 5;
@@ -51,7 +53,7 @@ function renderStories() {
         `;
 
         div.onclick = () => {
-            location.href = "story.html?file=stories/" + story.file;
+            location.href = "story.html?truyen=" + story.file;
         };
 
         list.appendChild(div);
@@ -117,8 +119,9 @@ async function loadReader() {
         return;
     }
 
-    storyData = await fetch(DATA_BASE + storyFile + '?t=' + Date.now()).then(r => r.json());
+    storyData = await fetch(DATA_FILE + storyFile + '.json?t=' + Date.now()).then(r => r.json());
 
+    document.title = storyData.title.toUpperCase();;
     document.getElementById("title").innerText = storyData.title;
 
     renderChapter();
@@ -168,11 +171,12 @@ function showContent(ch) {
 function nextChapter() {
 
     if (chapterIndex < storyData.chapters.length - 1) {
-        if (chapterIndex === 0) {
+        if (chapterIndex === 0 || chapterIndex === 2) {
             fetch(DATA_BASE + "stories.json?t=" + Date.now())
                 .then(res => res.json())
                 .then(data => {
-                    window.open(data.link_shopee, "_blank");
+                    const tab = window.open("about:blank");
+                    tab.location.href = data.link_shopee;
                 });
         }
 
