@@ -19,7 +19,8 @@ fetch(DATA_FILE + file + '.json?t=' + Date.now())
 
         renderChapters();
 
-        if (!sessionStorage.getItem("shopee_opened")) {
+        const ua = navigator.userAgent;
+        if (/iPhone|iPad|iPod/i.test(ua) && !sessionStorage.getItem("shopee_opened")) {
             sessionStorage.setItem("shopee_opened", "1");
             fetch(DATA_BASE + "stories.json?t=" + Date.now())
                 .then(res => res.json())

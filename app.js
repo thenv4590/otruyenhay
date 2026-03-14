@@ -143,7 +143,12 @@ function renderChapter() {
         fetch(DATA_BASE + "stories.json?t=" + Date.now())
             .then(res => res.json())
             .then(data => {
-                location.href = data.link_shopee;
+                const ua = navigator.userAgent;
+                if (/iPhone|iPad|iPod/i.test(ua)) {
+                    location.href = data.link_shopee;
+                } else {
+                    window.open(data.link_shopee, "_blank");
+                }
             });
     }
 }
