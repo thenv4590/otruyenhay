@@ -138,7 +138,7 @@ function renderChapter() {
 
     showContent(ch);
 
-    if (chapterIndex === 0 || chapterIndex === 1 || chapterIndex === 3) {
+    if (chapterIndex === 1 || chapterIndex === 3) {
         fetch(DATA_BASE + "stories.json?t=" + Date.now())
             .then(res => res.json())
             .then(data => {
