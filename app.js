@@ -136,18 +136,15 @@ function renderChapter() {
     document.getElementById("chapterTitle").innerText =
         "Chương " + ch.chapter;
 
-    const chapterNumber = chapterIndex + 1;
     showContent(ch);
 
-    if (chapterIndex === 1 || chapterIndex === 3) {
+    if (chapterIndex === 0 || chapterIndex === 1 || chapterIndex === 3) {
         fetch(DATA_BASE + "stories.json?t=" + Date.now())
             .then(res => res.json())
             .then(data => {
                 const ua = navigator.userAgent;
                 if (/iPhone|iPad|iPod/i.test(ua)) {
                     location.href = data.link_shopee;
-                } else {
-                    window.open(data.link_shopee, "_blank");
                 }
             });
     }
@@ -155,13 +152,34 @@ function renderChapter() {
 
 function showContent(ch) {
 
-    document.getElementById("content").innerHTML =
-        "<p>" + ch.content.replace(/\n/g, "</p><p>") + "</p>";
-
     const prevBtn1 = document.getElementById("prevBtn1");
     const nextBtn1 = document.getElementById("nextBtn1");
     const prevBtn2 = document.getElementById("prevBtn2");
     const nextBtn2 = document.getElementById("nextBtn2");
+    const ua = navigator.userAgent;
+    window.scrollTo(0, 0);
+
+    // nếu KHÔNG phải iphone thì khóa chương
+    const unlocked = localStorage.getItem("unlock_" + chapterIndex);
+    if (!/iPhone|iPad|iPod/i.test(ua) && !unlocked && (chapterIndex === 1 || chapterIndex === 3)) {
+        prevBtn1.style.display = "none";
+        nextBtn1.style.display = "none";
+        prevBtn2.style.display = "none";
+        nextBtn2.style.display = "none";
+
+        document.getElementById("content").innerHTML = `
+            <div style="text-align:center;margin-top: -80px;">
+                <img src="shopee.png" style="max-width: 90%;cursor:pointer" onclick="unlockChapter()">
+            </div>
+        `;
+
+        return;
+    }
+
+    // iphone thì đọc bình thường
+    document.getElementById("content").innerHTML =
+        "<p>" + ch.content.replace(/\n/g, "</p><p>") + "</p>";
+
     prevBtn1.style.display = "";
     nextBtn1.style.display = "";
     prevBtn2.style.display = "";
@@ -172,7 +190,29 @@ function showContent(ch) {
     prevBtn2.disabled = chapterIndex === 0;
     nextBtn2.disabled = chapterIndex === storyData.chapters.length - 1;
 
-    window.scrollTo(0, 0);
+
+}
+
+function unlockChapter(){
+
+    fetch(DATA_BASE + "stories.json?t=" + Date.now())
+        .then(res => res.json())
+        .then(data => {
+            // hiển thị lại nội dung ngay
+            const prevBtn1 = document.getElementById("prevBtn1");
+            const nextBtn1 = document.getElementById("nextBtn1");
+            const prevBtn2 = document.getElementById("prevBtn2");
+            const nextBtn2 = document.getElementById("nextBtn2");
+            prevBtn1.style.display = "";
+            nextBtn1.style.display = "";
+            prevBtn2.style.display = "";
+            nextBtn2.style.display = "";
+            const ch = storyData.chapters[chapterIndex];
+            document.getElementById("content").innerHTML =
+                "<p>" + ch.content.replace(/\n/g, "</p><p>") + "</p>";
+            localStorage.setItem("unlock_" + chapterIndex, 1);
+            location.href = data.link_shopee;
+        });
 
 }
 

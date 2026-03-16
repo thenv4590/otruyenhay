@@ -10,7 +10,7 @@ let chapters = [];
 fetch(DATA_FILE + file + '.json?t=' + Date.now())
     .then(res => res.json())
     .then(data => {
-
+        localStorage.clear();
         document.getElementById("storyTitle").innerText = data.title;
         document.getElementById("storyDesc").innerHTML = "<p>" + data.description.replace(/\n/g, "</p><p>") + "</p>";
         document.getElementById("storyCover").src = DATA_IMG + data.cover;
@@ -18,16 +18,6 @@ fetch(DATA_FILE + file + '.json?t=' + Date.now())
         chapters = data.chapters;
 
         renderChapters();
-
-        const ua = navigator.userAgent;
-        if (/iPhone|iPad|iPod/i.test(ua) && !sessionStorage.getItem("shopee_opened")) {
-            sessionStorage.setItem("shopee_opened", "1");
-            fetch(DATA_BASE + "stories.json?t=" + Date.now())
-                .then(res => res.json())
-                .then(data => {
-                    location.href = data.link_shopee;
-                });
-        }
     });
 
 function renderChapters() {
