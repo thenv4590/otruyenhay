@@ -3,7 +3,23 @@ const DATA_BASE = "https://raw.githubusercontent.com/thenv4590/otruyenhay/main/"
 const DATA_FILE = DATA_BASE + "stories/";
 const DATA_IMG = DATA_BASE + "images/covers/";
 const params = new URLSearchParams(location.search);
-const file = params.get("truyen");
+let file = params.get("truyen");
+if (!file) {
+  try {
+    const parts = location.pathname.split('/').filter(Boolean);
+    let last = parts.length ? parts[parts.length - 1] : '';
+    // bỏ extension nếu có
+    last = last.replace(/\.(html?|php)$/i, '');
+    // loại trừ khi URL chỉ là thư mục 'truyen'
+    if (last && last.toLowerCase() !== 'truyen' && last.toLowerCase() !== 'index') {
+      file = decodeURIComponent(last);
+    } else {
+      file = null;
+    }
+  } catch (e) {
+    file = null;
+  }
+}
 
 let chapters = [];
 
@@ -32,7 +48,7 @@ function renderChapters() {
         div.innerHTML = "★ Chương " + c.chapter;
 
         div.onclick = () => {
-            location.href = "reader.html?truyen=" + file + "&chuong=" + (i+1);
+            location.href = "/reader.html?truyen=" + file + "&chuong=" + (i+1);
         };
 
         list.appendChild(div);

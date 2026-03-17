@@ -53,10 +53,54 @@ function renderStories() {
         `;
 
         div.onclick = () => {
-            location.href = "story.html?truyen=" + story.file;
+            location.href = location.origin + "/truyen/" + story.file;
         };
 
         list.appendChild(div);
+
+        const LONG_MS = 600;
+        let _longTimer = null;
+        const absUrl = location.origin + "/truyen/" + story.file;
+
+        async function onLongPress(e) {
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(absUrl);
+                } else {
+                    const ta = document.createElement('textarea');
+                    ta.value = absUrl;
+                    ta.style.position = 'fixed';
+                    ta.style.left = '-9999px';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    // fallback: dùng execCommand chỉ nếu Clipboard API không có
+                    try {
+                        // @ts-ignore
+                        document.execCommand('copy');
+                    } catch (err) {
+                        console.warn('execCommand copy failed', err);
+                    }
+                    document.body.removeChild(ta);
+                }
+                // feedback ngắn (nếu muốn)
+                // e.g. flash style or title
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+        }
+
+        div.addEventListener('pointerdown', (e) => {
+            _longTimer = setTimeout(() => onLongPress(e), LONG_MS);
+        });
+
+        ['pointerup', 'pointercancel', 'pointerleave', 'pointerout'].forEach(evt =>
+        div.addEventListener(evt, () => {
+            if (_longTimer) { clearTimeout(_longTimer); _longTimer = null; }
+        })
+        );
+
+        // nếu cần, ngăn context menu khi giữ lâu
+        div.addEventListener('contextmenu', e => e.preventDefault());
 
     });
 
