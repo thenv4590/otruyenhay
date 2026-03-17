@@ -24,12 +24,6 @@
       "cover": "gui-nham-anh-goi-cam-cho-sep.jpg",
       "description": "",
       "file": "gui-nham-anh-goi-cam-cho-sep"
-    },
-    {
-      "title": "tên truyện",
-      "cover": "ten-truyen.jpg",
-      "description": "mô tả truyện",
-      "file": "ten-truyen"
     }
   ]
 }
