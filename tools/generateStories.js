@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseDir = path.resolve(__dirname);
+const baseDir = path.resolve(__dirname, '..');
 const templatePath = path.join(baseDir, 'story.html');
 const storiesPath = path.join(baseDir, 'stories.json');
 const outDir = path.join(baseDir, 'truyen');
